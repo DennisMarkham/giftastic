@@ -4,7 +4,9 @@
 $("#moarGifsbtn").click(function(){
 console.log("Hello");
 topics.push($("#moarGifstxt").val());
-console.log(topics);
+// console.log(topics);
+$("#bigCatButtons").empty();
+renderButtons();
 });
 
 // function addToArray(array)
@@ -17,6 +19,7 @@ console.log(topics);
 // console.log(topics);      
 
 function renderButtons(){
+  console.log(topics);
       for (var i = 0; i < topics.length; i++) {
         //this derives button title AND value from topics
         $("#bigCatButtons").append("<button value ='" + topics[i] + "' class = 'searched'>" + topics[i] + "</button>" + "  ");
@@ -27,7 +30,7 @@ function renderButtons(){
 
 
     //this function must be activated on click
-    $(".searched").click(function(){
+    $(document).on("click", ".searched", function(){
 
       
 
